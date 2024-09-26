@@ -23,6 +23,7 @@ function App() {
   const [selectedImage, setSelectedImage] = useState(false);
   const [dataModal, setDataModal] = useState({});
 
+  //handleSearch буде відповідати за код, який необхідно виконати при сабміті форми
   const handleSearch = (query) => {
     setSearchWord(query);
     setLoading(true);
@@ -87,6 +88,7 @@ function App() {
       {error && <ErrorMessage />}
       <ImageGallery images={images} openModal={openModal} />
 
+      {/* * Коли на бекенді закінчилися фото (остання сторінка), приховуємо кнопку "Load more". */}
       {totalPages > page && <LoadMoreBtn loadMore={loadMore} />}
     </>
   );
